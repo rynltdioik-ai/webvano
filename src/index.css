@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    background-color: #05050a;
+    background-image: 
+      linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #00ffcc;
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Efek scanline tipis di seluruh layar */
+  body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 50;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  .cyber-panel {
+    background: rgba(5, 5, 10, 0.8);
+    border: 1px solid #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.2), inset 0 0 10px rgba(0, 255, 204, 0.1);
+  }
+  
+  .cyber-btn {
+    background: transparent;
+    border: 1px solid #ff00ff;
+    color: #ff00ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 5px rgba(255, 0, 255, 0.2);
+  }
+  .cyber-btn:hover {
+    background: rgba(255, 0, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+    text-shadow: 0 0 5px #ff00ff;
+  }
+  
+  .cyber-item {
+    background: rgba(0, 255, 204, 0.05);
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    transition: all 0.2s ease;
+  }
+  .cyber-item:hover {
+    border-color: #00ffcc;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+    background: rgba(0, 255, 204, 0.1);
+  }
+}
+/* Efek kedip buat input form login */
+input:focus {
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: #00ffcc; box-shadow: 0 0 5px rgba(0, 255, 204, 0.2); }
+  50% { border-color: #ff00ff; box-shadow: 0 0 15px rgba(255, 0, 255, 0.5); }
+}
