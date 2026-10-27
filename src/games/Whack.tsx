@@ -44,13 +44,13 @@ export default function Whack() {
           <button
             key={i}
             onClick={() => hit(i)}
-            className="aspect-square text-4xl border-2 border-[#9bbc0f] bg-[#306230] touch-manipulation"
+            className="aspect-square text-4xl border-2 border-[#5b3a1e] bg-[#d9b27c] touch-manipulation"
           >
             {playing && hole === i ? "🐭" : "🕳️"}
           </button>
         ))}
       </div>
-      {!playing && time === 0 && score > 0 && <p className="text-xs text-[#e0f8d0] mb-3">Waktu habis! Skor {score}</p>}
+      {!playing && time === 0 && score > 0 && <p className="text-xs text-[#a33b1e] mb-3">Waktu habis! Skor {score}</p>}
       <button className="cyber-btn px-3 py-2 text-xs" onClick={start} disabled={playing}>
         [ {playing ? "Pukul tikusnya!" : "Mulai 30 detik"} ]
       </button>

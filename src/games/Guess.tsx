@@ -37,16 +37,16 @@ export default function Guess() {
   return (
     <div>
       <p className="text-xs mb-3">Tebakan: {tries} / Terbaik: {best || "-"}</p>
-      <p className="text-sm text-[#e0f8d0] mb-3">{msg}</p>
+      <p className="text-sm text-[#a33b1e] mb-3">{msg}</p>
       <input
         type="number"
         value={val}
         onChange={(e) => setVal(e.target.value)}
-        className="w-full bg-transparent border-2 border-[#9bbc0f] p-3 mb-3 outline-none"
+        className="w-full bg-transparent border-2 border-[#5b3a1e] p-3 mb-3 outline-none"
       />
       <div className="flex gap-2">
         <button className="cyber-btn flex-1 py-2 text-xs" onClick={submit}>[ Tebak ]</button>
-        <button className="border-2 border-[#9bbc0f] px-3 text-xs" onClick={reset}>ULANG</button>
+        <button className="border-2 border-[#5b3a1e] px-3 text-xs" onClick={reset}>ULANG</button>
       </div>
     </div>
   );

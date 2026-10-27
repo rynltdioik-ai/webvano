@@ -51,14 +51,14 @@ export default function Memory() {
             <button
               key={i}
               onClick={() => tap(i)}
-              className={`aspect-square text-3xl border-2 border-[#9bbc0f] touch-manipulation ${show ? "bg-[#306230]" : "bg-[#0f380f]"}`}
+              className={`aspect-square text-3xl border-2 border-[#5b3a1e] touch-manipulation ${show ? "bg-[#d9b27c]" : "bg-[#7bb662]"}`}
             >
               {show ? e : "?"}
             </button>
           );
         })}
       </div>
-      {won && <p className="text-xs text-[#e0f8d0] mb-3">Menang dalam {moves} langkah!</p>}
+      {won && <p className="text-xs text-[#a33b1e] mb-3">Menang dalam {moves} langkah!</p>}
       <button className="cyber-btn px-3 py-2 text-xs" onClick={reset}>[ Main lagi ]</button>
     </div>
   );

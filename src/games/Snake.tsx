@@ -28,11 +28,11 @@ export default function Snake() {
     setOver(false);
     const ctx = cv.current!.getContext("2d")!;
     const draw = () => {
-      ctx.fillStyle = "#0f380f";
+      ctx.fillStyle = "#7bb662";
       ctx.fillRect(0, 0, N * S, N * S);
-      ctx.fillStyle = "#e0f8d0";
+      ctx.fillStyle = "#a33b1e";
       ctx.fillRect(food.x * S + 2, food.y * S + 2, S - 4, S - 4);
-      ctx.fillStyle = "#9bbc0f";
+      ctx.fillStyle = "#5b3a1e";
       snake.forEach((p) => ctx.fillRect(p.x * S + 1, p.y * S + 1, S - 2, S - 2));
     };
     const tick = () => {
@@ -77,7 +77,7 @@ export default function Snake() {
     return () => window.removeEventListener("keydown", k);
   }, []);
 
-  const btn = "border-2 border-[#9bbc0f] py-3 touch-manipulation";
+  const btn = "border-2 border-[#5b3a1e] py-3 touch-manipulation";
   return (
     <div>
       <p className="text-xs mb-2">Skor: {score} / Terbaik: {best}</p>
@@ -85,10 +85,10 @@ export default function Snake() {
         ref={cv}
         width={N * S}
         height={N * S}
-        className="border-2 border-[#9bbc0f] max-w-full mb-3"
+        className="border-2 border-[#5b3a1e] max-w-full mb-3"
         style={{ imageRendering: "pixelated" }}
       />
-      {over && <p className="text-xs text-[#e0f8d0] mb-2">Game over!</p>}
+      {over && <p className="text-xs text-[#a33b1e] mb-2">Game over!</p>}
       <div className="grid grid-cols-3 gap-2 w-44 mb-3">
         <span />
         <button className={btn} onClick={() => turn(0, -1)}>▲</button>
